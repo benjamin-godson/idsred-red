@@ -19,7 +19,7 @@ from astropy.utils.exceptions import AstropyWarning
 import idsred
 
 idsred_path = idsred.__path__[0]
-XMIN, XMAX = 1172.67, 3597.24  # ad-hoc values used for the initial solution
+XMIN, XMAX = 1887.0, 2992.00  # ad-hoc values used for the initial solution
 ################
 # ARC spectrum #
 ################
@@ -434,9 +434,9 @@ def _prepare_params(params):
     parameters = Parameters()
     for i, value in enumerate(params):
         if i == 0:
-            min_val, max_val = 6000, 7500
+            min_val, max_val = 3000, 7500
         elif i == 1:
-            min_val, max_val = 1800, 2600
+            min_val, max_val = 1000, 2600
         else:
             min_val, max_val = -50, 50
         parameters.add(f"c{i}", value=value, min=min_val, max=max_val)

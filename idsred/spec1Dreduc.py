@@ -195,13 +195,13 @@ def optimised_trace(
     xs = np.arange(nx)
     ys = np.arange(ny)
 
-    cols = np.arange(hwidth, nx + 1, 2 * hwidth)
+    cols = np.arange(hwidth, nx + 1, hwidth)
     ycenter = np.zeros(len(cols))
     ywidth = np.zeros(len(cols))
     bkg_width = np.zeros(len(cols))
 
     for icol, col in enumerate(cols):
-        if col < 500 or col > 3500:
+        if col < 1500 or col > 2600:
             # avoid edges as there is no signal
             ycenter[icol] = np.inf
             ywidth[icol] = np.inf
